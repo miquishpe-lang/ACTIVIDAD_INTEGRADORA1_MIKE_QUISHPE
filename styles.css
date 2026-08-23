@@ -135,3 +135,56 @@ a {
 .hero-text {
     max-width: 700px;
 }
+
+.eyebrow {
+    margin-bottom: 12px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+}
+
+.hero h1 {
+    margin-bottom: 14px;
+    color: var(--white);
+    font-size: clamp(2.4rem, 6vw, 4.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.055em;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero h2 {
+    margin-bottom: 20px;
+    color: var(--primary);
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    font-weight: 700;
+}
+
+.hero p:not(.eyebrow) {
+    max-width: 650px;
+    margin-bottom: 30px;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.button {
+    display: inline-block;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    padding: 13px 22px;
+    color: #0b0d0f;
+    background: var(--primary);
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.button:hover {
+    color: var(--primary);
+    background: transparent;
+    transform: translateY(-2px);
+}
