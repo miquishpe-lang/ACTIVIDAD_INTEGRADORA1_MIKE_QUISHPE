@@ -86,3 +86,12 @@ a {
     gap: 28px;
     list-style: none;
 }
+
+
+.nav-list a {
+    position: relative;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
