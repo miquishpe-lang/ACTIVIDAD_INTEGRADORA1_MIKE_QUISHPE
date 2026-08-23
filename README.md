@@ -6,6 +6,8 @@
 
 ## Descripción
 Sitio web personal desarrollado como actividad académica para presentar información del estudiante, habilidades, proyectos y un formulario de contacto.
+Aplicado con estilo minimalista, con vistas consecutivas, aplicando los requesitos que se propone para esta actividad, un manejo sencillo
+con pestañas que facilitan la movilidad dentro de toda la pagina web.
 
 ## Tecnologías utilizadas
 - HTML5
@@ -41,3 +43,8 @@ portafolio-personal/
 
 También puede publicarse mediante **GitHub Pages** desde la configuración del repositorio.
 
+
+## Autor
+**Mike Quishpe Alban**
+
+Año: 2026
