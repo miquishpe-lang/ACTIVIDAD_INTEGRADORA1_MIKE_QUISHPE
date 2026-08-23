@@ -95,3 +95,43 @@ a {
     font-weight: 600;
     transition: color 0.2s ease;
 }
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.2s ease;
+}
+
+.nav-list a:hover {
+    color: var(--white);
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 78% 40%, rgba(183, 255, 42, 0.08), transparent 28%),
+        var(--background);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+    padding: 90px 0;
+}
+
+.hero-text {
+    max-width: 700px;
+}
