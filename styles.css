@@ -60,3 +60,29 @@ a {
     justify-content: space-between;
     gap: 24px;
 }
+
+.logo {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--primary);
+    border-radius: 12px;
+    color: var(--primary);
+    background: #11151a;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+    background: rgba(183, 255, 42, 0.08);
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    list-style: none;
+}
