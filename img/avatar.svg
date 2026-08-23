@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+<rect width="800" height="500" fill="#f8fafc"/>
+<rect x="70" y="70" width="660" height="360" rx="28" fill="url(#g)"/>
+<circle cx="400" cy="215" r="90" fill="#fff" opacity=".95"/>
+<text x="400" y="235" text-anchor="middle" font-family="Arial" font-size="70" font-weight="700" fill="#2563eb">MQ</text>
+<text x="400" y="350" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="#fff">Portafolio Personal</text>
+</svg>
