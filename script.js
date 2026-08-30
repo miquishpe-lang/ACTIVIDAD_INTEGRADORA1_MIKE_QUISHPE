@@ -68,3 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
             ? "La información adicional se encuentra oculta."
             : "¡Perfecto! Ahora puedes conocer un poco más sobre mi forma de trabajar.";
     });
+
+     // Evento mouseover: interacción visual y cambio de texto.
+    document.querySelectorAll(".skill-card").forEach((card) => {
+        card.addEventListener("mouseover", () => {
+            const habilidad = card.querySelector("h3").textContent;
+            interactionMessage.textContent = `Explorando habilidad: ${habilidad}`;
+        });
+    });
