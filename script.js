@@ -76,3 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
             interactionMessage.textContent = `Explorando habilidad: ${habilidad}`;
         });
     });
+
+     // Evento click: mostrar detalle de cada proyecto.
+    document.querySelectorAll(".details-button").forEach((button) => {
+        button.addEventListener("click", () => {
+            const proyecto = button.dataset.project;
+            projectFeedback.textContent =
+                `Has seleccionado "${proyecto}". Este proyecto forma parte de mi experiencia académica.`;
+        });
+    });
