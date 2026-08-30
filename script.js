@@ -167,3 +167,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
+
+         // Evento scroll: mostrar/ocultar botón "Volver al inicio".
+    window.addEventListener("scroll", () => {
+        backToTop.classList.toggle("visible", window.scrollY > 450);
+    });
+
+    // Evento click: volver al inicio.
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Cerrar el menú al seleccionar una sección en dispositivos pequeños.
+    navList.querySelectorAll("a").forEach((enlace) => {
+        enlace.addEventListener("click", () => {
+            navList.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Abrir menú");
+            menuToggle.textContent = "☰";
+        });
+    });
+
+    // Restaurar preferencia de tema si existe
+    const temaGuardado = localStorage.getItem("temaPortafolio");
+    if (temaGuardado === "claro") {
+        cambiarTema();
+    }
+
+    actualizarFecha();
+    mostrarSaludo();
+});
