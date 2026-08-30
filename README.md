@@ -4,10 +4,72 @@
 ## Nombre del proyecto
 **Portafolio Personal - Mike Quishpe Alban**
 
-## Descripción
-Sitio web personal desarrollado como actividad académica para presentar información del estudiante, habilidades, proyectos y un formulario de contacto.
-Aplicado con estilo minimalista, con vistas consecutivas, aplicando los requesitos que se propone para esta actividad, un manejo sencillo
-con pestañas que facilitan la movilidad dentro de toda la pagina web.
+## ACTUALIZACION
+
+El proyecto se desarrolla sobre el repositorio de la Actividad Integradora 1 y mantiene una evolución mediante commits descriptivos.
+
+Actualización del portafolio personal desarrollado en la Actividad Integradora 1. En esta segunda actividad se mantiene la estructura base de HTML y CSS y se incorpora **JavaScript** para transformar el sitio en una experiencia más dinámica, interactiva y funcional.
+
+El proyecto presenta información del estudiante, habilidades, proyectos académicos y un formulario de contacto, junto con funcionalidades realizadas mediante manipulación del DOM y eventos de JavaScript.
+
+## Nuevas funcionalidades implementadas con JavaScript
+
+### 1. Archivo JavaScript externo
+- Se creó el archivo `script.js`.
+- Se enlazó desde `index.html` mediante `script src="script.js" defer`.
+- No se utilizó JavaScript directamente dentro del HTML.
+
+### 2. Eventos con `addEventListener()`
+Se implementaron varios eventos:
+- `click` para cambiar entre modo oscuro y modo claro.
+- `click` para abrir y cerrar el menú responsive.
+- `click` para mostrar información adicional.
+- `mouseover` para mostrar dinámicamente la habilidad seleccionada.
+- `submit` para validar el formulario.
+- `input` para reaccionar mientras el usuario escribe.
+- `scroll` para mostrar el botón "Volver al inicio".
+
+### 3. Manipulación del DOM
+JavaScript modifica dinámicamente:
+- La fecha actual y el año del pie de página.
+- El saludo según la hora del día.
+- El texto de interacción del portafolio.
+- La visibilidad de información adicional de la sección "Sobre mí".
+- El texto de detalles de los proyectos.
+- Las clases CSS utilizadas para el modo claro/oscuro y validación de campos.
+- La visibilidad del botón "Volver al inicio".
+
+### 4. Funciones y estructuras de control
+El archivo `script.js` utiliza variables, funciones y estructuras condicionales:
+- `actualizarFecha()`
+- `mostrarSaludo()`
+- `cambiarTema()`
+- `validarFormulario()`
+- Condicionales `if`, `else if` y `else` para validar datos y determinar el saludo.
+
+### 5. Validación del formulario
+Antes de mostrar la confirmación se verifica mediante JavaScript que:
+- El nombre no esté vacío.
+- El correo no esté vacío y tenga un formato básico válido.
+- El mensaje no esté vacío.
+
+Los campos con errores se identifican visualmente y se muestran mensajes específicos. Cuando todos los datos son correctos, aparece un mensaje de confirmación personalizado.
+
+### 6. Funcionalidades adicionales
+Se incorporaron:
+- **Modo oscuro / modo claro**, guardando la preferencia del usuario con `localStorage`.
+- **Menú responsive** para facilitar la navegación desde dispositivos pequeños.
+- **Botón "Volver al inicio"** que aparece después de desplazarse por la página.
+- **Detalles interactivos de proyectos**.
+- **Fecha y saludo dinámicos**.
+
+### Commits de la Actividad Integradora 2
+
+1. `feat: integrar archivo JavaScript externo`
+2. `feat: implementar eventos interactivos`
+3. `feat: agregar manipulacion del DOM`
+4. `feat: validar formulario de contacto`
+5. `feat: agregar modo claro y mejoras finales`
 
 ## Tecnologías utilizadas
 - HTML5
