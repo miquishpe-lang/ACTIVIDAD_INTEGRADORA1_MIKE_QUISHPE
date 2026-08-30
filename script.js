@@ -49,4 +49,22 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         localStorage.setItem("temaPortafolio", modoClaro ? "claro" : "oscuro");
     }
+// Evento click: modo claro/oscuro.
+    themeToggle.addEventListener("click", cambiarTema);
 
+    // Evento click: menú responsive.
+    menuToggle.addEventListener("click", () => {
+        const abierto = navList.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", abierto);
+        menuToggle.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
+        menuToggle.textContent = abierto ? "✕" : "☰";
+    });
+
+ // Evento click: mostrar/ocultar información adicional.
+    aboutButton.addEventListener("click", () => {
+        const oculto = aboutExtra.classList.toggle("hidden");
+        aboutButton.textContent = oculto ? "Conocer más" : "Mostrar menos";
+        interactionMessage.textContent = oculto
+            ? "La información adicional se encuentra oculta."
+            : "¡Perfecto! Ahora puedes conocer un poco más sobre mi forma de trabajar.";
+    });
