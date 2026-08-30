@@ -26,3 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
         footerYear.textContent = ahora.getFullYear();
     }
 });
+
+// Función 2: mostrar un saludo diferente según la hora.
+    function mostrarSaludo() {
+        const hora = new Date().getHours();
+
+        if (hora < 12) {
+            interactionMessage.textContent = "¡Buenos días! Explora el portafolio y descubre mis proyectos";
+        } else if (hora < 19) {
+            interactionMessage.textContent = "¡Buenas tardes! Gracias por visitar mi portafolio interactivo.";
+        } else {
+            interactionMessage.textContent = "¡Buenas noches! Gracias por conocer mi trabajo académico.";
+        }
+    }
