@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
         currentDate.textContent = fecha;
         footerYear.textContent = ahora.getFullYear();
     }
-});
 
 // Función 2: mostrar un saludo diferente según la hora.
     function mostrarSaludo() {
@@ -39,3 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
             interactionMessage.textContent = "¡Buenas noches! Gracias por conocer mi trabajo académico.";
         }
     }
+
+  // Función 3: cambiar el tema y actualizar elementos del DOM.
+    function cambiarTema() {
+        const modoClaro = body.classList.toggle("light-theme");
+        themeToggle.textContent = modoClaro ? "🌙" : "☀️";
+        themeToggle.setAttribute(
+            "aria-label",
+            modoClaro ? "Activar modo oscuro" : "Activar modo claro"
+        );
+        localStorage.setItem("temaPortafolio", modoClaro ? "claro" : "oscuro");
+    }
+
