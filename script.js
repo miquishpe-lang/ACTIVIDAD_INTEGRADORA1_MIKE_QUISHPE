@@ -85,3 +85,72 @@ document.addEventListener("DOMContentLoaded", () => {
                 `Has seleccionado "${proyecto}". Este proyecto forma parte de mi experiencia académica.`;
         });
     });
+
+    // Función de validación del formulario.
+    function validarFormulario(event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById("nombre");
+        const correo = document.getElementById("correo");
+        const mensaje = document.getElementById("mensaje");
+
+        const errores = {
+            nombre: document.getElementById("nombreError"),
+            correo: document.getElementById("correoError"),
+            mensaje: document.getElementById("mensajeError")
+        };
+
+        const valores = {
+            nombre: nombre.value.trim(),
+            correo: correo.value.trim(),
+            mensaje: mensaje.value.trim()
+        };
+
+        let formularioValido = true;
+        const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        Object.values(errores).forEach((elemento) => {
+            elemento.textContent = "";
+        });
+
+        [nombre, correo, mensaje].forEach((campo) => {
+            campo.classList.remove("input-error", "input-valid");
+        });
+
+        if (valores.nombre === "") {
+            errores.nombre.textContent = "El nombre es obligatorio.";
+            nombre.classList.add("input-error");
+            formularioValido = false;
+        } else {
+            nombre.classList.add("input-valid");
+        }
+
+        if (valores.correo === "") {
+            errores.correo.textContent = "El correo electrónico es obligatorio.";
+            correo.classList.add("input-error");
+            formularioValido = false;
+        } else if (!correoValido.test(valores.correo)) {
+            errores.correo.textContent = "Ingresa un correo electrónico válido.";
+            correo.classList.add("input-error");
+            formularioValido = false;
+        } else {
+            correo.classList.add("input-valid");
+        }
+
+        if (valores.mensaje === "") {
+            errores.mensaje.textContent = "El mensaje es obligatorio.";
+            mensaje.classList.add("input-error");
+            formularioValido = false;
+        } else {
+            mensaje.classList.add("input-valid");
+        }
+
+        if (formularioValido) {
+            formStatus.textContent = `¡Gracias, ${valores.nombre}! Tu mensaje fue validado correctamente.`;
+            formStatus.className = "form-status success";
+            contactForm.reset();
+        } else {
+            formStatus.textContent = "Revisa los campos marcados antes de enviar el formulario.";
+            formStatus.className = "form-status error";
+        }
+    }
