@@ -154,3 +154,16 @@ document.addEventListener("DOMContentLoaded", () => {
             formStatus.className = "form-status error";
         }
     }
+
+    // Evento submit: validación básica antes de confirmar.
+    contactForm.addEventListener("submit", validarFormulario);
+
+    // Evento input: actualización dinámica del estado del formulario.
+    [document.getElementById("nombre"), document.getElementById("correo"), document.getElementById("mensaje")]
+        .forEach((campo) => {
+            campo.addEventListener("input", () => {
+                if (campo.value.trim() !== "") {
+                    campo.classList.remove("input-error");
+                }
+            });
+        });
