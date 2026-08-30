@@ -12,3 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentDate = document.getElementById("currentDate");
     const footerYear = document.getElementById("footerYear");
     const projectFeedback = document.getElementById("projectFeedback");
+
+    // Función 1: actualizar la fecha visible en el DOM.
+    function actualizarFecha() {
+        const ahora = new Date();
+        const fecha = ahora.toLocaleDateString("es-EC", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
+        });
+
+        currentDate.textContent = fecha;
+        footerYear.textContent = ahora.getFullYear();
+    }
+});
