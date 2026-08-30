@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio personal de Mike Quishpe Alban">
+    <meta name="description" content="Portafolio personal interactivo de Mike Quishpe Alban">
     <title>Portafolio | Mike Quishpe Alban</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -11,14 +11,16 @@
 <body>
     <header class="header">
         <nav class="nav container" aria-label="Navegación principal">
-            <a class="logo" href="#inicio">MQ</a>
-            <ul class="nav-list">
+            <a class="logo" href="#inicio" aria-label="Ir al inicio">MQ</a>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <ul class="nav-list" id="navList">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activar modo claro" title="Cambiar tema">☀️</button>
         </nav>
     </header>
 
@@ -26,22 +28,28 @@
         <section id="inicio" class="hero">
             <div class="container hero-content">
                 <div class="hero-text">
-                    <p class="eyebrow">PORTAFOLIO PERSONAL</p>
+                    <p class="eyebrow">PORTAFOLIO PERSONAL · <span id="currentDate">2026</span></p>
                     <h1>Hola, soy <span>Mike Quishpe Alban</span></h1>
-                    <h2>Estudiante de Ingeniería en Sistemas Inteligentes</h2>
+                    <h2 id="greeting">Estudiante de Ingeniería en Sistemas Inteligentes</h2>
                     <p>
                         Me interesa el desarrollo web, las bases de datos, la administración
                         de sistemas y la creación de soluciones tecnológicas funcionales.
                     </p>
-                    <a class="button" href="#proyectos">Ver mis proyectos</a>
-                </div>
-                <div class="profile-card">
-                    <div class="avatar">
-                    <img src="img/FOTO_PERFIL.png" alt="-">
-                    </div> 
+                    <div class="hero-actions">
+                        <a class="button" href="#proyectos">Ver mis proyectos</a>
+                        <button class="button button-outline" id="aboutButton" type="button">Conocer más</button>
+                    </div>
+                    <p class="interaction-hint" id="interactionMessage" aria-live="polite">Explora el portafolio para descubrir contenido interactivo.</p>
                 </div>
 
-</div>
+                <div class="profile-card">
+                    <div class="avatar">
+                        <img src="img/FOTO_PERFIL.png" alt="Fotografía de perfil de Mike Quishpe Alban">
+                    </div>
+                    <p>Desarrollo · Sistemas · Tecnología</p>
+                    <span class="status"><i></i> Disponible para proyectos académicos</span>
+                </div>
+            </div>
         </section>
 
         <section id="sobre-mi" class="section">
@@ -57,10 +65,9 @@
                             trabajado en proyectos académicos relacionados con HTML, CSS,
                             Python, SQL, Linux, Git y tecnologías de monitoreo.
                         </p>
-                        <p>
-                            Mi objetivo es fortalecer mis conocimientos técnicos y desarrollar
-                            soluciones digitales que sean útiles, seguras, accesibles y fáciles
-                            de utilizar.
+                        <p id="aboutExtra" class="about-extra hidden">
+                            Me gusta aprender mediante proyectos prácticos y convertir los conocimientos
+                            técnicos en soluciones claras, funcionales y fáciles de utilizar.
                         </p>
                     </div>
                 </div>
@@ -112,50 +119,39 @@
                 <h2>Proyectos destacados</h2>
                 <div class="projects">
                     <article class="project-card">
-                        <div class="project-image project-one" role="img" aria-label="Proyecto de servidor Linux">
-                            Linux Server
-                        </div>
+                        <div class="project-image project-one" role="img" aria-label="Proyecto de servidor Linux">Linux Server</div>
                         <div class="project-body">
                             <p class="project-tag">SISTEMAS</p>
                             <h3>Implementación de servidor Ubuntu</h3>
-                            <p>
-                                Configuración de un servidor Ubuntu con usuarios, almacenamiento,
-                                red, seguridad y administración del sistema.
-                            </p>
+                            <p>Configuración de un servidor Ubuntu con usuarios, almacenamiento, red, seguridad y administración del sistema.</p>
                             <span class="project-tech">Ubuntu · Linux · VirtualBox</span>
+                            <button class="details-button" type="button" data-project="Servidor Ubuntu">Ver detalle</button>
                         </div>
                     </article>
 
                     <article class="project-card">
-                        <div class="project-image project-two" role="img" aria-label="Proyecto de monitoreo">
-                            Monitoring
-                        </div>
+                        <div class="project-image project-two" role="img" aria-label="Proyecto de monitoreo">Monitoring</div>
                         <div class="project-body">
                             <p class="project-tag">MONITOREO</p>
                             <h3>Moodle, Chamilo y Grafana</h3>
-                            <p>
-                                Proyecto de implementación de plataformas educativas y monitoreo
-                                de recursos mediante Prometheus y Grafana.
-                            </p>
+                            <p>Proyecto de implementación de plataformas educativas y monitoreo de recursos mediante Prometheus y Grafana.</p>
                             <span class="project-tech">Prometheus · Grafana · Linux</span>
+                            <button class="details-button" type="button" data-project="Monitoreo">Ver detalle</button>
                         </div>
                     </article>
 
                     <article class="project-card">
-                        <div class="project-image project-three" role="img" aria-label="Proyecto de Arduino">
-                            Arduino
-                        </div>
+                        <div class="project-image project-three" role="img" aria-label="Proyecto de Arduino">Arduino</div>
                         <div class="project-body">
                             <p class="project-tag">IOT</p>
                             <h3>Sistema de seguridad con Arduino</h3>
-                            <p>
-                                Sistema de control de acceso con teclado, pantalla LCD, LEDs,
-                                sensor de gas y alarma sonora.
-                            </p>
+                            <p>Sistema de control de acceso con teclado, pantalla LCD, LEDs, sensor de gas y alarma sonora.</p>
                             <span class="project-tech">Arduino · Tinkercad · C++</span>
+                            <button class="details-button" type="button" data-project="Arduino">Ver detalle</button>
                         </div>
                     </article>
                 </div>
+                <p class="project-feedback" id="projectFeedback" aria-live="polite"></p>
             </div>
         </section>
 
@@ -164,21 +160,22 @@
                 <div>
                     <p class="eyebrow">HABLEMOS</p>
                     <h2>Contacto</h2>
-                    <p>
-                        ¿Tienes una idea o proyecto académico? Puedes utilizar el siguiente
-                        formulario para establecer contacto.
-                    </p>
+                    <p>¿Tienes una idea o proyecto académico? Puedes utilizar el siguiente formulario para establecer contacto.</p>
+                    <div class="form-status" id="formStatus" aria-live="polite"></div>
                 </div>
 
-                <form class="contact-form" action="#" method="post">
+                <form class="contact-form" id="contactForm" action="#" method="post" novalidate>
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name">
+                    <small class="field-error" id="nombreError"></small>
 
                     <label for="correo">Correo electrónico</label>
-                    <input type="email" id="correo" name="correo" placeholder="tu@email.com" required>
+                    <input type="email" id="correo" name="correo" placeholder="tu@email.com" autocomplete="email">
+                    <small class="field-error" id="correoError"></small>
 
                     <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje..." required></textarea>
+                    <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje..."></textarea>
+                    <small class="field-error" id="mensajeError"></small>
 
                     <button class="button" type="submit">Enviar mensaje</button>
                 </form>
@@ -186,10 +183,12 @@
         </section>
     </main>
 
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Volver al inicio">↑</button>
+
     <footer class="footer">
         <div class="container footer-content">
-            <p>&copy; 2026 Mike Quishpe Alban. Todos los derechos reservados.</p>
-            <a href="https://github.com/miquishpe-lang/ACTIVIDAD_INTEGRADORA1_MIKE_QUISHPE" target="_blank" rel="noopener noreferrer">Actividad Integradora</a>
+            <p>&copy; <span id="footerYear">2026</span> Mike Quishpe Alban. Todos los derechos reservados.</p>
+            <a href="https://github.com/miquishpe-lang/ACTIVIDAD_INTEGRADORA1_MIKE_QUISHPE" target="_blank" rel="noopener noreferrer">Actividad Integradora en GitHub</a>
         </div>
     </footer>
 </body>
